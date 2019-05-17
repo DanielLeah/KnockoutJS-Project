@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="dist/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/ionicons@4.5.5/dist/css/ionicons.min.css">
+    <meta name="viewport" content="width=device-width">
+    <title>REGIST ME</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-debug.js"></script>
+  </head>
+  <body>
+    <section class="section-form">
+      <div>
+        <h1>Hello <span data-bind="text: fullName"></span></h1>
+      </div>
+      <div class="row">
+        <form class="contact-form" name="myform" id="myform">
+          <div class="row">
+            <div class="col span-1-of-3 col1">
+              <label for="firstname">First name</label>
+            </div>
+            <div class="col span-2-of-3">
+              <input type="text" name="firstname" id="firstname" placeholder="Your first name" data-bind="value: firstName" required><i class="icon ion-ios-checkmark-circle-outline  firstNameVal" data-bind="hidden: nameLength() == 0, class: statusFName"></i>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col span-1-of-3 col1">
+              <label for="lastname">Last name</label>
+            </div>
+            <div class="col span-2-of-3">
+              <input type="text" name="lastname" id="lastname" placeholder="Your last name" data-bind="value: lastName" required><i class="icon ion-ios-checkmark-circle-outline  lastNameVal" data-bind="hidden: lastNameLength() == 0, class: statusLName"></i>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col span-1-of-3 col1">
+              <label for="email">Email</label>
+            </div>
+            <div class="col span-2-of-3">
+              <input type="email" name="email" id="email" placeholder="Your email" data-bind="value: email" required><i class="icon ion-ios-checkmark-circle-outline emailVal" data-bind="hidden: emailLength() == 0, class: statusEmail"></i>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col span-1-of-3 col1">
+              <label for="gender">Gender</label>
+            </div>
+            <div class="col span-2-of-3">
+              <select name="gender" id="gender" data-bind="value: gender">
+                <option value="chose" selected>Please chose</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select><i class="icon ion-ios-checkmark-circle-outline genderVal" data-bind="hidden: genderC() == false, class: statusGender"></i>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col span-1-of-3 col1">
+              <label for="bday">Date of birth</label>
+            </div>
+            <div class="col span-2-of-3">
+              <input type="date" name="bday" id="bday" min="1910-01-01" max="2018-01-01" placeholder="yyyy-mm-dd" data-bind="value: bday" required><i class="icon ion-ios-checkmark-circle-outline" data-bind="hidden: bdayLength() == false, class: statusBday"></i>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col span-1-of-2">
+              <button class="btn" type="button" data-bind="click: submitionButton">Submit your registration</button>
+            </div>
+            <div class="col span-1-of-2">
+              <button class="btn" type="button" data-bind="hidden: btnSeeData() == false">See data</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.js"></script>
+    <script src="dist/templates.js"></script>
+    <script src="http://localhost:35729/livereload.js"></script>
+    <script src="dist/scripts.js"></script>
+  </body>
+</html>
